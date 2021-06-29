@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -12,16 +11,16 @@ class Home extends StatelessWidget {
           child: Wrap(
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: SizedBox(
                   height: 36.h,
                   width: 180.w,
                   child: TextButton(
                     onPressed: () {
-                      print("ok");
+                      Get.back();
                     },
                     child: Text(
-                      "Goto Next",
+                      "Go Back",
                       style: TextStyle(
                           fontSize: 16.sp, fontWeight: FontWeight.bold),
                     ),
