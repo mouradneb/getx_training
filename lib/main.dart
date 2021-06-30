@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:getx_training/03_showdialog.dart';
+import 'package:getx_training/03_show_dialog.dart';
+import 'package:getx_training/04_bottomsheet_dynamictheme.dart';
 import './02_snackbar.dart';
-
 import 'custom_text_button.dart';
 import 'home.dart';
 
@@ -32,13 +32,14 @@ class MyApp extends StatelessWidget {
                         height: 36.h,
                         width: 180.w,
                         child: CustomTextButton(
-                          text: //"Goto Home",
-                              // "Show SnackBar",
-                              "Show Dialog",
-                          onPressed: () => //Get.to(Home()),
-                              // SnackBar_02.show(),
-                              ShowDialog_03.Show(),
-                        ),
+                            text: //"Goto Home",
+                                // "Show SnackBar",
+                                // "Show Dialog",
+                                "Bottom Sheet",
+                            onPressed: () => //Get.to(Home()),
+                                // SnackBar_02.show(),
+                                // ShowDialog_03.Show(),
+                                BottomSheet_DynamicTheme_04.show()),
                       ),
                     ),
                   ],
