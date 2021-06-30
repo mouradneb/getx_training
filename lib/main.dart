@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:getx_training/03_showdialog.dart';
 import './02_snackbar.dart';
 
 import 'custom_text_button.dart';
@@ -32,9 +33,11 @@ class MyApp extends StatelessWidget {
                         width: 180.w,
                         child: CustomTextButton(
                           text: //"Goto Home",
-                              "Show SnackBar",
+                              // "Show SnackBar",
+                              "Show Dialog",
                           onPressed: () => //Get.to(Home()),
-                              SnackBar_02.show(),
+                              // SnackBar_02.show(),
+                              ShowDialog_03.Show(),
                         ),
                       ),
                     ),
