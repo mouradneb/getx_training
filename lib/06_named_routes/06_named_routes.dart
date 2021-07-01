@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:getx_training/custom_text_button.dart';
+import 'package:getx_training/widgets/custom_text_button.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

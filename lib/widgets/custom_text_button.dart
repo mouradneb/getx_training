@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextButton extends StatelessWidget {
   late final String text;
@@ -14,10 +15,11 @@ class CustomTextButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(text),
       style: ButtonStyle(
+        textStyle: MaterialStateProperty.all(TextStyle(fontSize: 18.sp)),
         backgroundColor: MaterialStateProperty.all(Colors.blue),
         foregroundColor: MaterialStateProperty.all(Colors.white),
         padding: MaterialStateProperty.all(
-          const EdgeInsets.symmetric(horizontal: 20),
+          EdgeInsets.symmetric(horizontal: 10.w),
         ),
       ),
     );

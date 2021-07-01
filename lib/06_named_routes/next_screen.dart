@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../custom_text_button.dart';
+import '../widgets/custom_text_button.dart';
 
 class NextScreen extends StatelessWidget {
   const NextScreen({Key? key}) : super(key: key);
