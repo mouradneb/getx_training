@@ -4,6 +4,9 @@ import 'package:get/get.dart';
 import 'package:getx_training/03_show_dialog.dart';
 import 'package:getx_training/04_bottomsheet_dynamictheme.dart';
 import 'package:getx_training/05_unamed_routes.dart';
+import 'package:getx_training/06_named_routes/06_named_routes.dart';
+import 'package:getx_training/06_named_routes/next_screen.dart';
+import 'package:getx_training/06_named_routes/unknow_route.dart';
 import './02_snackbar.dart';
 import 'custom_text_button.dart';
 import 'home.dart';
@@ -19,6 +22,26 @@ class MyApp extends StatelessWidget {
       designSize: const Size(360, 690),
       builder: () => GetMaterialApp(
           debugShowCheckedModeBanner: false,
+          title: "Navigation", // 06
+          initialRoute: "/", // 06
+          defaultTransition: Transition.zoom, // 06
+          getPages: [
+            GetPage(name: "/", page: () => MyApp()),
+            GetPage(name: "/home", page: () => NamedRoutes_06()),
+            GetPage(
+              name: "/nextscreen",
+              page: () => NextScreen(),
+              transition: Transition.leftToRight,
+            ),
+            /*GetPage(
+              name: "/nextscreen/:someValue",
+              page: () => NextScreen(),
+              transition: Transition.leftToRight,
+            ), */ // 06 - 02
+          ],
+          unknownRoute:
+              GetPage(name: '/notfound', page: () => UnknowRoute()), // 06 - 03
+          // 06
           home: SafeArea(
             child: Scaffold(
               appBar: AppBar(
@@ -38,7 +61,7 @@ class MyApp extends StatelessWidget {
                                 // "Show Dialog",  //03
                                 // "Bottom Sheet", //04
                                 "Goto Home", //05
-                            onPressed: () async {
+                            onPressed: () {
                               //Get.to(Home()),
                               // SnackBar_02.show(),
                               // ShowDialog_03.Show(),
@@ -56,8 +79,15 @@ class MyApp extends StatelessWidget {
 
                               /* Get.to(UnamedRoutes_05(),
                                   arguments: "Data From Main"), */
-                              var data = await Get.to(UnamedRoutes_05());
-                              print(data);
+                              /* var data = await Get.to(UnamedRoutes_05());
+                              print(data); */ // 05
+
+                              // 06
+                              Get.toNamed("/home");
+                              // Get.offNamed("/home");
+                              // Get.offAllNamed("/home");
+                              /* Get.toNamed(
+                                  "/home?channel=Ripples Code&content=Flutter Getx");*/ // 06 - 01
                             }),
                       ),
                     ),
